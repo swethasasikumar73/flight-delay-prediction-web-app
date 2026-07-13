@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Flight Delay Prediction</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+<h1>
+
+✈ Flight Delay Prediction
+
+</h1>
+
+<p style="text-align:center;color:white;font-size:18px;">
+
+Predict the arrival delay of a flight using Machine Learning
+
+</p>
+
+<form action="/predict" method="POST">
+
+<input type="number" name="dep_delay" placeholder="Departure Delay" required>
+
+<input type="number" name="taxi_out" placeholder="Taxi Out" required>
+
+<input type="number" name="distance" placeholder="Distance" required>
+
+<input type="number" name="carrier_delay" placeholder="Carrier Delay" required>
+
+<input type="number" name="weather_delay" placeholder="Weather Delay" required>
+
+<input type="number" name="nas_delay" placeholder="NAS Delay" required>
+
+<input type="number" name="security_delay" placeholder="Security Delay" required>
+
+<input type="number" name="late_aircraft_delay" placeholder="Late Aircraft Delay" required>
+
+<button type="submit">
+Predict Delay
+</button>
+
+</form>
+
+{% if prediction %}
+
+<div class="result">
+
+<h2>
+
+Predicted Arrival Delay
+
+</h2>
+
+<h1>
+<!-- 
+{{ prediction }} Minutes -->
+{% if prediction %}
+
+<div class="result">
+
+<h2>Predicted Arrival Delay</h2>
+
+<h1>{{ prediction }} Minutes</h1>
+
+</div>
+
+{% endif %}
+</h1>
+
+</div>
+
+{% endif %}
+
+<footer>
+
+Developed By Swetha Sasikumar
+
+<br>
+
+M.Sc Computer Science
+
+<br>
+
+Flight Delay Prediction using Machine Learning
+
+</footer>
+
+</div>
+
+</body>
+
+</html>
